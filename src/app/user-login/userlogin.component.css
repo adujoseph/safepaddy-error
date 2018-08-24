@@ -1,0 +1,201 @@
+*{
+    box-sizing: border-box;
+}
+a:hover{
+    color:rgb(17, 211, 224);
+}
+.hover-blue:hover{
+    color: rgb(17, 211, 224) !important;
+}
+.my-btn:link,
+.my-btn:visited{
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    border-radius: 100px;
+
+}
+.my-btn-small:link,
+.my-btn-small:visited{
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    border-radius: 100px;
+    border-color: 1px solid black;
+
+}
+.my-btn:hover,
+.my-btn-small:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.8);
+}
+.my-btn:active{
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+}
+.my-btn::after{
+    content: " ";
+    display: inline-block;
+    height:100%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+.my-btn:hover::after{
+    transform: scale(2);
+}
+
+.my-btn-white{
+    background-color: white;
+    color: blue;
+}
+.my-btn-black{
+    background-color: black;
+    color: white;
+}
+.my-header-text{
+    font-size: 2.5rem;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(0,0,0,0.8);
+    text-transform: uppercase;
+}
+.my-header-text:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+.icons {
+    font-size: 30px;
+    padding:5px;
+    font-weight: 10;
+}
+#appStoreButton{
+    background-image: url('../../assets/img/appStore.png');
+    background-size: cover;
+    height: 60px;
+    width: 200px;
+}
+#googlePlayButton {
+    background-image: url('../../assets/img/googlePlayButton.png');
+    height: 60px;
+    width: 200px;
+    background-size: cover;
+
+}
+#steps-works{
+    height: 60vh;
+    background: lightcyan;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: -5%;
+}
+#pricing-section{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+#partner{
+    background: grey;
+    padding-top: 20px;
+}
+.list-unstyled{
+    display: inline-block;
+}
+bg-color{
+    background-image: linear-gradient(to right,
+    rgba(5,74,137,0.8),
+    #28b483cc),
+    url('../../assets/img/full-screen-image-3.jpg');
+}
+
+.socials{
+    height: 100vh;
+    background-image: linear-gradient(to right,
+    rgba(125,27,2,0.6),
+    rgba(255,128,64,0.7)),
+    url('../../assets/img/full-screen-image-3.jpg');
+    background-size: cover;
+    background-position: bottom;
+
+}
+.social--icon{
+    font-size: 30px;
+    padding:5px;
+    font-weight: 100;
+    display: inline-block;
+
+}
+.landing-page .logos {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.landing-page .logos ul{
+    display: block;
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 48px;
+}
+.landing-page .logos li{
+    display: inline-block;
+    margin: 0 17px;
+}
+.landing-page .section-testimonial .carousel-inner .item .mask{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+}
+
+.spinner {
+    margin: 0 auto 0;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}

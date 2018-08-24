@@ -1,0 +1,92 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background: lightgrey; height: 12vh;">
+    <div class="container">
+        <div class="navbar-header"><!--brand name here-->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myHomePage" style="color: white;">Safepaddy</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right" id="#myPage"><!-- Menu Bar Starts Here-->
+                <!--<li class="active"><a href="home.html">Home</a></li>-->
+                <!--<li><a href="service.html">Services</a></li>-->
+                <!--<li><a href="lastestwork.html">Latest Work</a></li>-->
+                <!--<li><a href="about.html">About Us</a></li>-->
+                <!--<li><a href="contact.html">Contact Page</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="text-center" >
+        <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+    <div class="row">
+        <div class="col-md-4" style="margin-left: 30%; margin-top:10%; margin-bottom: 10%; padding:20px;">
+            <div class="card">
+                <div class="header">
+                    <p class="display-4">Confirm Registration!</p>
+                </div>
+                <div class="content">
+                    <form #f1="ngForm" novalidate (ngSubmit)="save1(f1.value, f1.valid)">
+                        <div class="form-group">
+                            <label  for="" class="control-label">Enter Number:
+                                <span class="star">*</span>
+                            </label>
+                            <input type="number" class="form-control" name="code1" [(ngModel)]="confirmData.otp"
+                                   required reverse="true" #code="ngModel" />
+                        </div>
+                        <!--<small [hidden]="code.valid || (code.pristine && !f1.submitted)" class="text-danger">-->
+                            <!--This field can't be empty-->
+                        <!--</small>-->
+                        <button  (click)="verifyPhoneNumber()" type="submit" class="btn btn-fill  btn-wd " style="background:rgba(0,0,0, 0.7); width:100%;" > submit</button>
+                        <small class="text-danger">{{verifyError}}</small>
+                    </form>
+                </div>
+                <div class="footer">
+                    <p>
+                        Having trouble? <a href="#">Resend Code</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-transparent" style="background:lightgrey; color:white;">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a [routerLink]="['/']">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/privacy']">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/terms']">
+                                Terms and Condition
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; {{test | date: 'yyyy'}} <a href="https://www.creative-tim.com">SafePaddy Inc.</a>, made with
+                    love for a better life
+                </p>
+            </div>
+    </footer>
+</div>
+
+
+
+

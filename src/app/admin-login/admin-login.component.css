@@ -1,0 +1,80 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Lato','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#fff;
+}
+::placeholder {
+    color: #c7c0bd;
+}
+
+/*!*body {*!*/
+    /*!*font-family: 'Lato','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*!*/
+    /*!*font-size:16px;*!*/
+    /*!*font-weight: 400;*!*/
+    /*!*line-height:1.7;*!*/
+    /*!*color:#fff;*!*/
+
+/*!*}*!*/
+/*!*.wrapper{*!*/
+    /*!*position: relative;*!*/
+/*}*/
+.header {
+    height: 100vh;
+    background-image:linear-gradient(to right bottom, rgba(255,020,0200,0.9),rgba(0,0,11,0.8)), url('../../assets/img/full-screen-image-3.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    z-index: -5;
+}
+
+.row{
+    position:absolute;
+    padding-top:15% ;
+    left:40%;
+    text-align:justify;
+}
+.header-text{
+    margin-left: 2px;
+    padding-bottom: 10px;
+}
+.form-container{
+    width: 100%;
+}
+.my-input{
+    padding:12px 20px;
+    margin: 8px 0;
+    font-size: 16px;
+    background-color: rgba(54, 21, 54, 0.425);
+    border: none;
+    border-radius: 20px;
+    width:100%;
+    color: #ffffff;
+}
+
+.my-input:focus{
+    outline:none;
+
+}
+.my-btn{
+    padding:12px 20px;
+    margin: 8px 0;
+    font-size: 16px;
+    background-color: rgba(248, 121, 8, 0.8);
+    border: none;
+    border-radius: 20px;
+    width:100%;
+    color: white;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+}
+
+
+.myFooter{
+    padding-top: 80%;
+    color: rgb(139, 114, 114);
+    text-align:center;
+
+
+}
+

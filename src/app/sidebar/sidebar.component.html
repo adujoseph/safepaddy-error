@@ -1,0 +1,171 @@
+<div class="logo myColor" data-color="black" >
+            <a href="#" class="simple-text logo-mini">
+                <div class="logo-img">
+                    <img src="../../assets/img/logos/logo-50sq.png"/>
+                </div>
+            </a>
+            <a [routerLink]="['/']" class="simple-text logo-normal">
+                SafePaddy
+            </a>
+</div>
+<div class="sidebar-wrapper"   >
+
+	<div class="user">
+		<div class="info">
+			<div class="photo">
+				<img src="{{util.getPhoto()}}" />
+			</div>
+			<a data-toggle="collapse" href="#collapseExample" class="collapsed">
+				<span>
+					{{util.getName()}}
+					<b class="caret"></b>
+				</span>
+			</a>
+			<div class="collapse" id="collapseExample">
+				<ul class="nav">
+					<li>
+						<a [routerLink]="['/safeuser/profile']">
+							<span class="sidebar-mini fa fa-user"></span>
+							<span class="sidebar-normal">My Profile</span>
+						</a>
+					</li>
+					<!--<li>-->
+						<!--<a [routerLink]="['/safeuser/profile/#changePassword']">-->
+							<!--<span class="sidebar-mini fa fa-key"></span>-->
+							<!--<span class="sidebar-normal">Change Password </span>-->
+						<!--</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<a href="#">-->
+							<!--<span class="sidebar-mini fa fa-gear"></span>-->
+							<!--<span class="sidebar-normal">Settings</span>-->
+						<!--</a>-->
+					<!--</li>-->
+				</ul>
+			</div>
+		</div>
+    </div>
+    
+    <!-- SOMETHING GOES HERE-->
+	<div *ngIf="isNotMobileMenu()" >
+		<form class="navbar-form navbar-left navbar-search-form" role="search">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input class="form-control" placeholder="Search..." type="text" value="">
+            </div>
+        </form>
+		<!--<ul class="nav nav-mobile-menu">-->
+            <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a ruterLinkActive = "active" [routerLink]="['/charts']">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<i class="fa fa-line-chart"></i>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>Stats</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;/    <li class="dropdown">&ndash;&gt;-->
+                <!--&lt;!&ndash;<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<i class="fa fa-gavel"></i>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p class="hidden-md hidden-lg">&ndash;&gt;-->
+                        <!--&lt;!&ndash;Actions&ndash;&gt;-->
+                        <!--&lt;!&ndash;<b class="caret"></b>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<ul class="dropdown-menu">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="#">Create New Post</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="#">Manage Something</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="#">Do Nothing</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="#">Submit to live</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a href="#">Another Action</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+            <!--<li class="dropdown">-->
+                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">-->
+                    <!--<i class="fa fa-bell-o"></i>-->
+                    <!--<span class="notification">5</span>-->
+                    <!--<p class="hidden-md hidden-lg">-->
+                        <!--Notifications-->
+                        <!--<b class="caret"></b>-->
+                    <!--</p>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="#">Notification 1</a></li>-->
+                    <!--<li><a href="#">Notification 2</a></li>-->
+                    <!--<li><a href="#">Notification 3</a></li>-->
+                    <!--<li><a href="#">Notification 4</a></li>-->
+                    <!--<li><a href="#">Another notification</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+
+            <!--<li class="dropdown dropdown-with-icons">-->
+                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">-->
+                    <!--<i class="fa fa-list"></i>-->
+                    <!--<p class="hidden-md hidden-lg">-->
+                        <!--More-->
+                        <!--<b class="caret"></b>-->
+                    <!--</p>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu dropdown-with-icons">-->
+                    <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="#">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="pe-7s-mail"></i> Messages&ndash;&gt;-->
+                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--<li>-->
+                        <!--<a href="#">-->
+                            <!--<i class="pe-7s-help1"></i> Help Center-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="#">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="pe-7s-tools"></i> Settings&ndash;&gt;-->
+                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--<li class="divider"></li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a class="text-danger" href="#">-->
+                            <!--<i class="pe-7s-close-circle"></i>-->
+                            <!--Log out-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+
+        <!--</ul>-->
+    </div>
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
+                <!--If is a single link-->
+                <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
+                    <i class="{{menuitem.icontype}}"></i>
+                    <p class="text-capitalize">{{menuitem.title}}</p>
+                </a>
+                <!--If it have a submenu-->
+                <a data-toggle="collapse" href="#{{menuitem.title}}" *ngIf="menuitem.type === 'sub'">
+                    <i class="{{menuitem.icontype}}"></i>
+                    <p>{{menuitem.title}}<b class="caret"></b></p>
+                </a>
+
+                <!--Display the submenu items-->
+                <div id="{{menuitem.title}}" class="collapse" *ngIf="menuitem.type === 'sub'">
+                    <ul class="nav">
+                        <li routerLinkActive="active" *ngFor="let childitem of menuitem.children">
+                            <a [routerLink]="[menuitem.path, childitem.path]">
+                                <span class="sidebar-mini">{{childitem.ab}}</span>
+                                <span class="sidebar-normal">{{childitem.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+			<li>
+				<a href="#">
+					<i class="pe-7s-study"></i>
+					<p (click)="goToSupport()">Help & Support</p>
+				</a>
+			</li>
+        </ul>
+
+</div>

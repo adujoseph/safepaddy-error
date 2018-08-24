@@ -1,0 +1,367 @@
+<div class="row" id="thanks" style="height: 95vh;">
+    <div class="col-md-6 col-sm-6 col-xs-12 thanks-image" id="thanks-image" style="height: inherit;">
+                <div style="margin-top: 20vh; margin-left:10%; padding:10%;">
+                    <div style="color: whitesmoke;">
+                        
+                            <div class="media" style="color: whitesmoke; font-size:20px;">
+                                    <div class="media-left">
+                                        <div class="icon">
+                                            <i class="pe-7s-angle-right-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        Get help fast, anytime and anywhere.
+                                    </div>
+                            </div>
+            
+                            <div class="media" style="color: whitesmoke; font-size:20px;">
+                                    <div class="media-left">
+                                        <div class="icon">
+                                            <i class="pe-7s-angle-right-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        Connects you with friends and family at emergencies
+                                    </div>
+                            </div>
+            
+                            <div class="media" style="color: whitesmoke; font-size:20px;">
+                                    <div class="media-left">
+                                        <div class="icon" >
+                                            <i class="pe-7s-angle-right-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                         Alert security operatives with a push button
+                                    </div>
+                            </div>
+                    
+                    </div>
+                    <div id="myDownloadbutton">
+                        <a href="#" class="my-btn-black my-btn" id="playstore"> <span class="fa fa-android pull-left"></span>Play Store</a>
+                        <a href="#" class="my-btn-black my-btn" id="applestore"><span class="fa fa-apple pull-left"></span> Apple Store</a>
+                    </div>
+                </div>
+    </div>
+    
+    <div class="col-md-6 col-sm-6 col-xs-12" style=" padding:4%;background-color: rgba(230, 108, 38, 0.685); height:inherit;"  >
+            <div class="card" id="loginform" style="margin-top: 10vh; padding:5%;">
+                    <form #f1="ngForm" novalidate (ngSubmit)="save1(f1.value, f1.valid)">
+                        <div class="header text-center">Access SafePaddy</div>
+                            <div class="content">
+                                <div class="form-group">
+                                                <label class="control-label" for="">Email Address/ Username:
+                                                    <span class="star">*</span>
+                                                </label>
+                                                <input type="email" class="form-control" name="email" [(ngModel)]="loginData.username"
+                                                       required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                                                <small [hidden]="email.valid || (email.pristine && !f1.submitted)" class="text-danger">
+                                                   Enter email or username
+                                                </small>
+                                </div>
+                                <div class="form-group">
+                                    <label  for="" class="control-label">Password
+                                                    <span class="star">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                        <input ngControl="login" [(ngModel)]="loginData.password" ngModel name="pass"
+                                            *ngIf="!showPasswordNow" type="password" placeholder="Password" class="form-control">
+                                        <input ngControl="login" [(ngModel)]="loginData.password" ngModel name="pass"
+                                            *ngIf="showPasswordNow" placeholder="Password" class="form-control">
+                                        <span (mousedown)="mousedown()" (mouseup)="mouseup()" class="input-group-addon"><i class="pe-7s-look"></i></span>
+                                    </div>
+                                </div>       
+                                <div class="category">
+                                    <span class="star">*</span> Required fields
+                                </div>
+                            </div>
+                            <div>
+                                <small class="text-danger" style="margin-left: 10px;">{{loginError}}</small>
+                            </div>
+                            <div class="footer">
+                                            <div class="row">
+                                                <div class=" col-md-6 pull-left" >
+                                                    <a (click)="gotoForg()" class="hover-black">Forget Password?</a>
+                                                </div>
+                                                <div class=" col-md-6  pull-right">
+                                                    <button (click)="userLogin()" type="submit" [disabled]="loginProcessing == true" class="btn btn-fill  btn-wd pull-right" style="background:rgba(0,0,0, 0.7);" >
+                                                        <span *ngIf="loginProcessing == false">Login</span>
+            
+                                                        <div *ngIf="loginProcessing == true" class="spinner">
+                                                            <div class="bounce1"></div>
+                                                            <div class="bounce2"></div>
+                                                            <div class="bounce3"></div>
+                                                        </div>
+                                                    </button>
+            
+                                                </div>
+                                            </div>
+                                            
+                            </div>
+                    </form>
+                </div>
+    </div>
+    
+</div>
+<!--  
+=========================================================
+
+
+<div class="wrapper-home" style=" overflow-x: hidden;">
+<div class="container-fluid" id="top" style="height: 95vh;">
+    <div class="row thanks" id="thanks" style="height: 95vh;">
+        <div class="col-md-6 col-sm-6 col-xs-12 thanks-image" id="thanks-image" style="height: inherit;">
+            <div style="margin-top: 20vh; margin-left:10%; padding:10%;">
+                <div style="color: whitesmoke;">
+                    
+                        <div class="media" style="color: whitesmoke; font-size:20px;">
+                                <div class="media-left">
+                                    <div class="icon">
+                                        <i class="pe-7s-angle-right-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Get help fast, anytime and anywhere.
+                                </div>
+                        </div>
+        
+                        <div class="media" style="color: whitesmoke; font-size:20px;">
+                                <div class="media-left">
+                                    <div class="icon">
+                                        <i class="pe-7s-angle-right-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Connects you with friends and family at emergencies
+                                </div>
+                        </div>
+        
+                        <div class="media" style="color: whitesmoke; font-size:20px;">
+                                <div class="media-left">
+                                    <div class="icon" >
+                                        <i class="pe-7s-angle-right-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                     Alert security operatives with a push button
+                                </div>
+                        </div>
+                
+                </div>
+                <div id="myDownloadbutton">
+                    <a href="#" class="my-btn-black my-btn" id="playstore"> <span class="fa fa-android pull-left"></span>Play Store</a>
+                    <a href="#" class="my-btn-black my-btn" id="applestore"><span class="fa fa-apple pull-left"></span> Apple Store</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12" style="height: inherit;">
+            <div [ngSwitch]="newToggle">
+                <div *ngSwitchDefault>
+                    <div class="text-xs-center" style="margin-top: 10vh; padding:50px; color:whitesmoke;">
+                        <div style="margin-top: 2vh; padding: 1%;">
+                            <h2 class="animate-left"> You Are Safer With <span id="safepaddyText"><strong>SafePaddy </strong></span></h2>
+                            <h4 class="animate-right">We offer the better way to Handle emergencies with friends & Family always at your beck and call</h4>
+                        </div>
+                        <div class="btn-group btn-lg btn-group-justified" style="color:whitesmoke; border-color:whitesmoke;">
+                            <a  (click)="callRegister()" class="btn btn-primary" style="color:whitesmoke; border-color:whitesmoke;" >Sign Up</a>
+                            <a  (click)="callLogin()" class="btn btn-primary"style="color:whitesmoke; border-color:whitesmoke; background: whitesmoke; color: black!important;">Log In</a>
+                        </div>
+                    </div>
+                </div>
+                <div *ngSwitchCase="1">
+                    <div style="margin-top:20vh; padding: 0px 100px; font-size: 14px;">
+                        <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
+
+                            <div class="header text-center">
+                                <h5 style="color: whitesmoke;">Join SafePaddy Now!!!</h5>
+                            </div>
+                            <div class="content" style="color: whitesmoke;">
+                                <div class="form-group">
+                                    <!-- <label class="control-label" for="">Name:
+                                        <span class="star">*</span>
+                                    </label> 
+                                    <input type="text" class="form-control" name="name" placeholder="Enter Your Name"
+                                           required  #name="ngModel" [(ngModel)]="signUpData.name" >
+                                    <small [hidden]="name.valid || (name.pristine && !f.submitted)" class="text-danger">
+                                        Name field required is required and format should be <i> First Name and Last Name</i>.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" [(ngModel)]="signUpData.email"
+                                          placeholder="Enter Email Address" required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                                    <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
+                                        Email field is required and format should be <i>john@doe.com</i>.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="username" [(ngModel)]="signUpData.username"
+                                         placeholder="Username"  required  #username="ngModel" pattern="^[a-zA-Z0-9_.+-]+$">
+                                    <small [hidden]="username.valid || (username.pristine && !f.submitted)" class="text-danger">
+                                        Username field is required
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label  for="" class="control-label">Phone Number</label>
+                                    <int-phone-prefix [(ngModel)]="signUpData.phone" value="0000000" [ngModelOptions]="{standalone: true}"></int-phone-prefix>
+                               </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+
+                                        <input placeholder="Password" ngControl="login" [(ngModel)]="signUpData.password" ngModel name="pass"
+                                               *ngIf="!showPasswordNow" type="password" placeholder="Password"
+                                               class="form-control">
+                                        <input ngControl="login" [(ngModel)]="signUpData.password" ngModel name="pass"
+                                               *ngIf="showPasswordNow" placeholder="Password" class="form-control">
+                                        <span (mousedown)="mousedown()" (mouseup)="mouseup()" class="input-group-addon"><i class="pe-7s-look"></i></span>
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div >
+                                <button (click)="createUser()" type="submit" [disabled]="loginProcessing == true" class="btn btn-fill  btn-wd pull-right" style="background:rgba(0,0,0, 0.7);" >
+                                    <span *ngIf="loginProcessing == false">Register</span>
+
+                                    <div *ngIf="loginProcessing == true" class="spinner">
+                                        <div class="bounce1"></div>
+                                        <div class="bounce2"></div>
+                                        <div class="bounce3"></div>
+                                    </div>
+                                </button>
+                                <a class="text-left hover-blue my-pointer" (click)="callLogin()" style="color: whitesmoke;" >Already a User?</a>
+                                <div class="clearfix"></div>
+
+                                <small class="text-danger " >{{registerError}}</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div *ngSwitchCase="2">
+                    <div style="margin-top:10vh; padding: 100px; color: whitesmoke; ">
+                        <form #f1="ngForm" novalidate (ngSubmit)="save1(f1.value, f1.valid)">
+                            <div class="header text-center">
+
+                                <h5 style="color: whitesmoke;">Access SafePaddy </h5>
+
+
+                            </div>
+                            <div class="content">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email / Username" name="email" [(ngModel)]="loginData.username"
+                                           required  #email="ngModel" pattern="^[a-zA-Z0-9-]+$">
+                                    <small [hidden]="email.valid || (email.pristine && !f1.submitted)" class="text-danger">
+                                        Enter email or username
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+
+                                        <input ngControl="login" [(ngModel)]="loginData.password" ngModel name="pass"
+                                               *ngIf="!showPasswordNow" type="password" placeholder="Password"
+                                               class="form-control">
+                                        <input ngControl="login" [(ngModel)]="loginData.password" ngModel name="pass"
+                                               *ngIf="showPasswordNow" placeholder="Password" class="form-control">
+                                        <span (mousedown)="mousedown()" (mouseup)="mouseup()" class="input-group-addon"><i class="pe-7s-look"></i></span>
+                                    </div>
+                                </div>
+                                <div class="category">   </div>
+                            </div>
+                            <div>
+                                <small class="text-danger" style="margin-left: 10px;">{{loginError}}</small>
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-6">
+                                    <a (click)="callReset()" class="hover-blue my-pointer" style="color:whitesmoke;">Forget Password?</a>
+                                </div>
+                                <div class=" col-md-6 pull-right">
+                                    <button (click)="userLogin()" type="submit" [disabled]="loginProcessing == true" class="btn btn-fill  btn-wd btn btn-fill  btn-wd pull-right" style="background:rgba(0,0,0, 0.7);" >
+                                        <span *ngIf="loginProcessing == false">Login</span>
+
+                                        <div *ngIf="loginProcessing == true" class="spinner">
+                                            <div class="bounce1"></div>
+                                            <div class="bounce2"></div>
+                                            <div class="bounce3"></div>
+                                        </div>
+                                    </button>
+
+                                </div>
+                                <div class="text-center" style="padding: 2px; color: black;">
+                                    <a (click)="callRegister()" class="hover-blue my-pointer" style="color:whitesmoke;">New User? Click Here to Register</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div *ngSwitchCase="3">
+                    <div style="margin-top:10vh; padding: 100px; color: whitesmoke; text-align: center; align-items: center;">
+                        <form method="#" action="#"  >
+                            <div >
+                                <div class="header text-center" >
+                                    <h5 style="color: whitesmoke;" > Reset Password Request </h5>
+                                </div>
+                                <div class="content" [ngSwitch]="resetPass" >
+                                    <div *ngSwitchDefault >
+                                        <span class="pe-7s-door-lock text-center " style="font-size:50px; padding-bottom:10%; color:lightgrey;"></span>
+                                        <div class="form-group" >
+                                            <input  [(ngModel)]="resetData.email" type="email" name="email" placeholder="Enter email" class="form-control">
+                                        </div>
+                                        <div>
+                                            <button (click)="resetPassword()" type="submit" [disabled]="loginProcessing == true" class="btn btn-fill  btn-wd text-center" style="background:rgba(0,0,0, 0.7); width:100%;" >
+                                                <span *ngIf="loginProcessing == false">Reset Password</span>
+
+                                                <div *ngIf="loginProcessing == true" class="spinner">
+                                                    <div class="bounce1"></div>
+                                                    <div class="bounce2"></div>
+                                                    <div class="bounce3"></div>
+                                                </div>
+                                            </button>
+                                            <small class="text-danger text-center">{{resetError}}</small>
+                                        </div>
+                                    </div>
+                                    <div *ngSwitchCase="1" style="background-color: lightgray; padding:20px; color: whitesmoke;" class="text-center my-pointer">Check Your Email for Reset Info</div>
+                                </div>
+
+
+
+                                <div class="text-center">
+                                    <a (click)="callLogin()" class="hover-blue my-pointer" style="color:whitesmoke;">Back to Login</a>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+=========================================================
+
+-->
+<div class="clearfix"></div>
+
+<footer>
+    <div class="footer footer-transparent">
+        <div class="container">
+
+                <nav class="pull-left">
+                    <ul>
+                        <li><a [routerLink]="['/']"> Home</a></li>
+                        <li><a [routerLink]="['/privacy']">Privacy Policy</a></li>
+                        <li><a [routerLink]="['/terms']">Terms and Condition</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; {{test | date: 'yyyy'}} <a href="#">SafePaddy&trade;</a>, made with love for a better life
+                </p>
+        </div>
+    </div> 
+</footer>
+
+
+
+
